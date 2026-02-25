@@ -109,29 +109,29 @@ import './style.css'
 // userId = false; // ❌
 
 // Базова структура HTTP-відповіді
-interface HttpResponse {
-  status: number;
-  message: string;
-}
+// interface HttpResponse {
+//   status: number;
+//   message: string;
+// }
 
 // Специфічна відповідь для користувача
-interface UserData {
-  id: number;
-  name: string;
-  email?: string;
-}
+// interface UserData {
+//   id: number;
+//   name: string;
+//   email?: string;
+// }
 
 // Поєднання базової відповіді з даними користувача
-type UserResponse = HttpResponse & { data: UserData };
+// type UserResponse = HttpResponse & { data: UserData };
 
-const response: UserResponse = {
-  status: 200,
-  message: "asdadsdasdsad",
-  data: {
-    id: 1,
-    name: "Alice",
-    email:"@sdasdsdad"
-  }
+// const response: UserResponse = {
+//   status: 200,
+//   message: "asdadsdasdsad",
+//   data: {
+//     id: 1,
+//     name: "Alice",
+//     email:"@sdasdsdad"
+//   }
   // status: 200,
   // message: "Success",
   // data: {
@@ -139,8 +139,70 @@ const response: UserResponse = {
   //   name: "Alice",
   //   email: "alice@example.com"
   // }
-};
-console.log("🚀 ~ response:", response)
+// };
+// console.log("🚀 ~ response:", response)
 
-console.log(response.data.name); // Alice
+// console.log(response.data.name); // Alice
+
+// function greet(name: string, age: number): void {
+//   console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+// }
+// greet("Alice", 30); // ✅
+// greet(25, "Alice"); 
+// ❌ Error: Argument of type 'number' is not assignable to parameter of type 'string'.
+
+
+// function sum(a: number, b: number): number {
+  // return a + b;
+// }
+// const result = sum(5, 10); // ✅ result матиме тип number
+// console.log("🚀 ~ result:", result)
+
+//? Розглянемо задачу, де необхідно написати функцію, що отримує список користувачів
+//? та повертає імена цих користувачів у вигляді масиву рядків. Ось як ми можемо 
+//?типізувати таку функцію:
+
+// interface User{
+//   id: number
+//   name: string
+// }
+
+// const getUserNames = (users: User[]): string[] => {
+//   return users.map((user)=>user.name)
+// } 
+
+// const getUserId = (users: User[]): Number[] => {
+//   return users.map((user)=> user.id)
+// } 
+
+// const userList: User[] = [
+//   { id: 1, name: 'Alice' },
+//   { id: 2, name: 'Bob' },
+//     {id: 3 ,name: 'Charlei'},
+// ] 
+
+// const resName = getUserNames(userList)
+// console.log("🚀 ~ resName:", resName)
+// const resId = getUserId(userList)
+// console.log("🚀 ~ resId:", resId)
+
+// function greet(name: string, age?: number) {
+//   if (age !== undefined) {
+//     console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+//   } else {
+//     console.log(`Hello, my name is ${name}.`);
+    
+//   }
+// }
+
+// greet('alice', 13);
+// greet("jonhy");
+
+//!Function Type (Тип функції)
+
+type Addfunctions = (a: number, b: number) => number;//задаем тип функции 
+const add: Addfunctions = (x, y) => x + y;// создаем функцию add и присваиваем ей тип !
+console.log( add(2, 5 ))
+
+
 
