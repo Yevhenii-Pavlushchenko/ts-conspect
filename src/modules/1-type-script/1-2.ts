@@ -78,7 +78,7 @@ const fetchUsers = async (): Promise<User[]> => {
   const data = await response.json() as User[];
   return data;
 };
-// console.log("🚀 ~ fetchUsers ~ fetchUsers:", fetchUsers)
+console.log("🚀 ~ fetchUsers ~ fetchUsers:", fetchUsers)
 
 
 //!Типізація GETзапитів з Axios
@@ -88,5 +88,7 @@ const fetchUser = async (userId: number): Promise<User> => {
 	);
   return response.data;
 };
-// console.log("🚀 ~ fetchUser ~ fetchUser:", fetchUser)
+console.log("🚀 ~ fetchUser ~ fetchUser:", fetchUser)
+
+
 

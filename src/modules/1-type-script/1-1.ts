@@ -198,6 +198,14 @@
 
 //!Function Type (Тип функції)
 
-type Addfunctions = (a: number, b: number) => number;//задаем тип функции 
-const add: Addfunctions = (x, y) => x + y;// создаем функцию add и присваиваем ей тип !
-console.log( add(2, 5 ))
+// type Addfunctions = (a: number, b: number) => number;//задаем тип функции 
+// const add: Addfunctions = (x, y) => x + y;// создаем функцию add и присваиваем ей тип !
+// console.log( add(2, 5 ))
+
+function foo(x:string | number , y: string |number) {
+  // return x + y
+}
+
+
+
+console.log("🚀 ~ foo ~ foo:", foo(5,7))
